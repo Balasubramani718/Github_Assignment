@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Simple HTML Page</title>
+  <style>
+    :root{--accent:#2563eb;--bg:#f7fafc;font-family:Inter,system-ui,Arial,sans-serif}
+    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.45}
+    .container{max-width:900px;margin:48px auto;padding:24px;background:#fff;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,.08)}
+    header{display:flex;justify-content:space-between;align-items:center}
+    h1{margin:0;font-size:1.6rem}
+    nav a{margin-left:12px;text-decoration:none;color:var(--accent);font-weight:600}
+    .hero{margin-top:18px}
+    .btn{display:inline-block;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:700;border:2px solid var(--accent);background:transparent}
+    .btn:hover{background:var(--accent);color:#fff}
+    footer{margin-top:28px;font-size:0.9rem;color:#475569}
+    @media (max-width:520px){.container{margin:20px;padding:16px}h1{font-size:1.3rem}}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Simple HTML Page</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <p>Welcome — this is a clean, responsive starter page with minimal CSS and a tiny JavaScript demo below.</p>
+      <p>
+        <a id="greetBtn" class="btn" href="#">Say Hello</a>
+      </p>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>This page uses semantic HTML, a simple CSS style block, and one small script to keep things lightweight.
+      Use it as a template for experiments and quick prototypes.</p>
+    </section>
+
+    <footer>
+      <p id="message">Ready.</p>
+    </footer>
+  </main>
+
+  <script>
+    // small interactive demo
+    document.getElementById('greetBtn').addEventListener('click', function(e){
+      e.preventDefault();
+      const name = prompt('What is your name?') || 'friend';
+      document.getElementById('message').textContent = `Hello, ${name}! — enjoy experimenting.`;
+    });
+  </script>
+</body>
+</html>
